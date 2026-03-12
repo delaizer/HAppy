@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>З Днем Народження</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: radial-gradient(circle at top, #0f2027, #203a43, #000);
+font-family: Arial;
+color:white;
+}
+
+.card{
+backdrop-filter: blur(20px);
+background: rgba(255,255,255,0.1);
+border-radius:25px;
+padding:40px;
+text-align:center;
+box-shadow:0 0 40px rgba(0,255,255,0.3);
+}
+
+h1{
+font-size:50px;
+background: linear-gradient(90deg,#00fff7,#ff00f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.photos-row{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:20px;
+margin:20px 0;
+align-items:center;
+}
+
+/* Зсув правого фото */
+.photos-row.right img{
+justify-self:end; /* зсунули правий ряд вправо */
+}
+
+.photos-row img{
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 20px cyan;
+}
+
+/* Квіти посередині */
+.flowers{
+margin:0 auto 20px auto;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+}
+
+.flower{
+width:50px;
+height:50px;
+}
+
+/* Кнопка */
+button{
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#ff00f7,#00fff7);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px cyan;
+}
+
+/* Відео */
+.video{
+margin-top:30px;
+display:none;
+}
+
+video{
+border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎉 З Днем Народження 🎉</h1>
+
+<p>Бажаю, щоб НМТ цього року було легким,
+усі відповіді були правильні,
+а результат — максимальний бал!</p>
+
+<!-- Ліва та права рядки фото -->
+<div class="photos-row left">
+<img src="photo1.png">
+<img src="photo2.png">
+</div>
+
+<!-- Квіти посередині -->
+<div class="flowers">
+<svg class="flower" viewBox="0 0 64 64" fill="pink">
+<circle cx="32" cy="32" r="10"/>
+<circle cx="32" cy="12" r="10"/>
+<circle cx="32" cy="52" r="10"/>
+<circle cx="12" cy="32" r="10"/>
+<circle cx="52" cy="32" r="10"/>
+</svg>
+
+<svg class="flower" viewBox="0 0 64 64" fill="lightblue">
+<circle cx="32" cy="32" r="10"/>
+<circle cx="32" cy="12" r="10"/>
+<circle cx="32" cy="52" r="10"/>
+<circle cx="12" cy="32" r="10"/>
+<circle cx="52" cy="32" r="10"/>
+</svg>
+</div>
+
+<div class="photos-row right">
+<img src="photo1.png">
+<img src="photo2.png">
+</div>
+
+<button onclick="showVideo()">🎁 Сюрприз</button>
+
+<div class="video" id="video" style="display:none; margin-top:30px;">
+<video width="560" controls autoplay>
+<source src="video.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+
+<script>
+function showVideo(){
+document.getElementById("video").style.display="block";
+}
+</script>
+
+</body>
+</html>
